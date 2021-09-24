@@ -1,0 +1,138 @@
+/*
+color verde: 14d4a5
+
+*/
+
+* {
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+.background {
+  background: linear-gradient(180deg, #ffffffff 0%, #cfcfdbff 100%);
+}
+
+.survey {
+  display: block;
+  padding: 5rem 1rem 5rem 1rem;
+}
+
+.survey__title {
+  width: 100%;
+  text-align: center;
+  color: #384862ff;
+  font-size: 3rem;
+}
+
+.survey__subtitle {
+  width: 100%;
+  text-align: center;
+  color: #384862ff;
+  font-size: 1.5rem;
+}
+
+.survey__form {
+  display: block;
+  margin: 5rem auto;
+  max-width: 950px;
+  background-color: #576887ff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 3rem #38486244;
+}
+.survey__content {
+  margin-top: 2rem;
+}
+
+.survey__label {
+  display: block;
+  font-weight: bolder;
+  margin: 2rem 0rem 1rem 0.2rem;
+  color: white;
+  font-size: large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.2rem;
+}
+.survey__age {
+  margin-left: 3rem;
+  border-radius: 0.4rem;
+}
+
+.survey__select {
+  margin-left: 3rem;
+  border-radius: 0.4rem;
+}
+
+.survey__text {
+  height: 2.2rem;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  width: 100%;
+}
+.survey__input--focus:hover {
+  border-color: #14d4a5ff;
+}
+
+.survey__input--focus:focus {
+  box-shadow: 0 0 2rem #14d4a566;
+  outline: #14d4a5ff;
+  border: #14d4a5ff solid 2px;
+}
+
+.survey__option-label {
+  display: block;
+  margin: 0.5rem 0rem 0.5rem 3rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Ocultar checkbox */
+.survey__option {
+  visibility: hidden;
+}
+
+/* Nuevo diseño de checkbox */
+.survey__checked {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  margin-right: 0.5rem;
+  border-radius: 0.2rem;
+  border: white solid 2px;
+}
+
+.survey__checked--radio{
+  border-radius: 50%;
+} 
+/* añadir efecto ::hover */
+.survey__option-label:hover .survey__option ~ .survey__checked {
+  box-shadow: 0 0 2rem #14d4a566;
+  border: #14d4a5ff solid 2px;
+}
+
+/* Efecto cuando esta activo*/
+.survey__option:checked ~ .survey__checked {
+  background: #14d4a5ff;
+  box-shadow: 0 0 2rem #14d4a566;
+}
+
+
+.survey__textarea {
+  width: 100%;
+  height: 8rem;
+  border-radius: 0.4rem;
+}
+
+.survey__submit {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  background: #14d4a5ff;
+  border-color: aquamarine;
+}
+
+.survey__submit:active {
+  background: #14f4a5ff;
+  border-color: aquamarine;
+}

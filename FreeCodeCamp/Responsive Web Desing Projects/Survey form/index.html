@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <title>Encuesta de satisfacción.</title>
+</head>
+
+<body id="main" class="background">
+    <main class="survey">
+        <h1 id="title" class="survey__title">Encuesta satisfacción del "Martillo de Mithrill."</h1>
+        <p id="description" class="survey__subtitle"> Hola aventurero, tomate tu tiempo y ayudarnos a mejorar nuestros
+            servicios.</p>
+        <form id="survey-form" class="survey__form">
+
+            <div class="survey__content">
+                <label class="survey__label " for="name" id="name-label">Nombre:</label>
+                <input type="text" class="survey__text survey__input--focus" name="name" id="name"
+                    placeholder="Introducir nombre ..." required />
+                <label class="survey__label" for="email" id="email-label">Email:</label>
+                <input type="email" class="survey__text survey__input--focus" name="email" id="email"
+                    placeholder="ejemplo@ejemplo.com" required />
+            </div>
+
+            <div class="survey__content">
+
+                <label class="survey__label" for="age" id="number-label">Edad (opcional)</label>
+                <input type="number" max="99" min="10" class="survey__age survey__input--focus" id="number"
+                    placeholder="18 - 99"/>
+            </div>
+
+            <div class="survey__content">
+
+                <p class="survey__label">Clase:</p>
+                <select class="survey__select survey__input--focus" name="role" id="dropdown" required>
+                    <option disabled selected value>Selecciona una opción</option>
+                    <option value="guerrero">Guerrero</option>
+                    <option value="guerrerro">Paladín</option>
+                    <option value="cazador">Cazador</option>
+                    <option value="bardo">Bardo</option>
+                    <option value="clerigo">Clerigo</option>
+                    <option value="mago">Mago</option>
+                    <option value="picaro">Picaro</option>
+                    <option value="druida">Druida</option>
+                    <option value="druida">Otro</option>
+                </select>
+            </div>
+
+            <div class="survey__content">
+                <p class="survey__label"> ¿Recomendarias este servicio a otros aventureros?</p>
+                <label class="survey__option-label">
+                    <input name="user-recommentd" value="definitely" type="radio" class="survey__option" />
+                    <span class="survey__checked survey__checked--radio"></span>Cuenta con mi hacha
+
+                </label>
+                <label class="survey__option-label">
+
+                    <input name="user-recommentd" value="definitely" type="radio" class="survey__option">
+                    <span class="survey__checked survey__checked--radio"></span>Puede
+                </label>
+                <label class="survey__option-label">
+
+                    <input name="user-recommentd" value="definitely" type="radio" class="survey__option">
+                    <span class="survey__checked survey__checked--radio"></span>Nunca, por el honor de mi familia.
+                </label>
+            </div>
+            <div class="survey__content">
+                <p class="survey__label">¿Qué servicio necesitas como aventurero?</p>
+
+                <label class="survey__option-label">
+                    <input name="prefer" value="Carcaj" type="checkbox" class="survey__option" />
+                    <span class="survey__checked"></span>Carcaj y arcos.
+                </label>
+                <label class="survey__option-label">
+                    <input name="prefer" value="Escudos" type="checkbox" class="survey__option" />
+                    <span class="survey__checked"></span>Escudo.
+
+                </label>
+                <label class="survey__option-label">
+                    <input name="prefer" value="mangual" type="checkbox" class="survey__option" />
+                    <span class="survey__checked"></span>Manguales.
+
+                </label>
+                <label class="survey__option-label">
+                    <input name="prefer" value="armaduras" type="checkbox" class="survey__option" />
+                    <span class="survey__checked"></span>Armaduras.
+
+                </label>
+                <label class="survey__option-label">
+                    <input name="prefer" value="anillos" type="checkbox" class="survey__option" />
+                    <span class="survey__checked"></span>Anillos.
+
+                </label>
+                <label class="survey__option-label">
+                    <input name="prefer" value="espadas" type="checkbox" class="survey__option" />
+                    <span class="survey__checked"></span>Espadas.
+
+                </label>
+                <label class="survey__option-label">
+                    <input name="prefer" value="dagas" type="checkbox" class="survey__option" />
+                    <span class="survey__checked"></span>Dagas.
+                </label>
+                <label class="survey__option-label">
+                    <input name="prefer" value="hechizo_def" type="checkbox" class="survey__option" />
+                    <span class="survey__checked"></span>Hechizo
+                    defensivos.
+
+                </label>
+                <label class="survey__option-label">
+                    <input name="prefer" value="hechizo_ofe" type="checkbox" class="survey__option" />
+                    <span class="survey__checked"></span>Hechizos
+                    ofensivos.
+                </label>
+
+
+            </div>
+            <div class="survey__content">
+
+                <p class="survey__label"> Cuentanos tus aventuras y necesidades.</p>
+                <textarea id="comments" class="survey__textarea survey__input--focus" name="comment"
+                    placeholder="Añadir comentario aqui...">
+
+                </textarea>
+
+            </div>
+            <div class="survey__content">
+                <button type="submit" id="submit" class="survey__submit">Enviar</button>
+            </div>
+
+
+        </form>
+    </main>
+</body>
+
+</html>
