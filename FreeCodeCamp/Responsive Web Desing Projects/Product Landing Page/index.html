@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
@@ -14,16 +13,21 @@
 
     <header id="header" class="header">
         <div class="header__container">
-            <img class="header__logo" id="header-img" src="img/logo.svg" alt="logo">
-            <h1 class="header__title">My<span class="header__span">ICoaching</span> </h1>
+            <img class="header__img" id="header-img" src="img/logo.svg">
+            <h1 class="header__title"><span class="header__span">My</span>ICoaching</h1>
+       
         </div>
-
+        
         <nav id="nav-bar" class="menu">
+        
+                <input id="menu-bar" type="checkbox" class="menu__check">
+                <label for="menu-bar" class="menu__label"><img class="menu__icon" src="img/hmenu.svg"></label>
+
             <ul class="menu__content">
-                <li id="nav-link" class="menu__list"><a class="nav-link" href="#presentation">Presentation</a></li>
-                <li id="nav-link" class="menu__list"><a class="nav-link" href="#presvideo">Subcribte</a></li>
-                <li id="nav-link" class="menu__list"><a class="nav-link" href="#feature">Feature</a></li>
-                <li id="nav-link" class="menu__list"><a class="nav-link" href="#price">Price</a></li>
+                <li id="nav-link" class="menu__list"><a class="menu__link nav-link" href="#presentation">Presentation</a></li>
+                <li id="nav-link" class="menu__list"><a class="menu__link nav-link" href="#video-section">Subscribe</a></li>
+                <li id="nav-link" class="menu__list"><a class="menu__link nav-link" href="#feature">Feature</a></li>
+                <li id="nav-link" class="menu__list"><a class="menu__link nav-link" href="#price">Price</a></li>
             </ul>
         </nav>
     </header>
@@ -31,7 +35,7 @@
     <div class="containter">
         <section id="presentation" class="section prev">
             <div class="section__container">
-                <div class="prev__content">
+                <div class="prev__content ani-from-left">
                     <hgroup>
                         <h2 class="prev__title">Be the best vesión of yourself.</h2>
                         <h2 class="prev__title">we will guide you.</h2>
@@ -40,58 +44,69 @@
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                             Excepturi earum, at saepe voluptatum ipsa corporis suscipit totam temporibus?</p>
                     </div>
-                <div>
-                    <form action="" class="prev__form">
-                        <input id="email" name="email" type="email" placeholder="ejemplo@ejemplo.com"
+                <div class="ani-from-bottom">
+                    <form action="https://www.freecodecamp.com/email-submit" class="prev__form" method="GET">
+                        <input name="email" id="email" type="email" placeholder="ejemplo@ejemplo.com"
                         class="form__input form__text" required></input>
-                        <input id="submit" type="submit" class="form__input form__submit" value="Suscríbete">
+                        <input type="submit" class="form__input form__submit" value="Subscribe">
                     </form>
                 </div>
                 
                 </div>
-                <figure class="prev__figure">
+                <figure class="prev__figure ani-from-right">
                     <img class="prev__img" id="fearue-img" src="img/coaching.svg" alt="App feature">
                 </figure>
             </div>
 
         </section>
 
-        <section id="presvideo" class="section product">
+        <section id="video-section" class="section product">
             <div class="section__container">
                 <iframe id="video" class="product__video" width="640" height="360" src="https://www.youtube.com/embed/-eQhmSD2zz8"
                 title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
-                <form id="form" class="form">
-                    <label for="name" class="form__label">Nombre:</label>
-                    <input id="name" type="text" placeholder="Introducir nombre...."
+
+                <form  id="form" class="form" action="https://www.freecodecamp.com/email-submit" method="GET">
+                    <label for="name" class="form__label">Name:</label>
+                    <input id="name" type="text" placeholder="Name...."
                         class="form__input form__text"></input>
                     <label for="email" class="form__label">Email:</label>
-                    <input id="email" name="email" type="email" placeholder="ejemplo@ejemplo.com"
-                        class="form__input form__text" required></input>
-                    <input id="submit" type="submit" class="form__input form__submit" value="Suscríbete">
+                    <input id="email" type="email" placeholder="ejemplo@ejemplo.com"
+                        name="email" class="form__input form__text" required></input>
+                    <input id="submit" type="submit" class="form__input form__submit" value="Subscribe">
                 </form>
             </div>
         </section>
 
         <section id="feature" class="section feature">
-            <div class="section__container">
-                <ul class="feature__list">
-                    <!--Iconos de ubicación, Reloj y temas-->
-                    <li class="feature__item"><img class="feature__icon" alt="icono gps" src="img/icono_gpg.svg">
+                <ul class="section__container feature__list">
+                    <li class="feature__item"><img class="feature__icon" alt="GPS" 
+                        src="img/icon_gpg.svg">
                         <spa class="feature__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</spa>
                     </li>
-                    <li class="feature__item"><img class="feature__icon" alt="icono Reloj" src="img/icono_tiempo.svg">
+                    <li class="feature__item"><img class="feature__icon" alt="Time" 
+                        src="img/icon_time.svg">
                         <spa class="feature__text">Expedita modi ratione vitae deserunt quibusdam iusto culpa eos aut.</spa>
                     </li>
-                    <li class="feature__item"><img class="feature__icon" alt="icono areas de estudio"
-                            src="img/icono_area.svg">
+                    <li class="feature__item"><img class="feature__icon" alt="Level Up"
+                            src="img/icon_levelup.svg">
                         <spa class="feature__text">Tempore reiciendis dicta at sequi quis consequuntur in eius.</spa>
                     </li>
+                    <li class="feature__item"><img class="feature__icon" alt="Shield"
+                        src="img/icon_shield.svg">
+                    <spa class="feature__text">Tempore reiciendis dicta at sequi quis consequuntur in eius.</spa>
+                    </li>
+                    <li class="feature__item"><img class="feature__icon" alt="Webcam"
+                        src="img/icon_webcam.svg">
+                    <spa class="feature__text">Tempore reiciendis dicta at sequi quis consequuntur in eius.</spa>
+                    </li>
+                    <li class="feature__item"><img class="feature__icon" alt="Help"
+                        src="img/icon_help.svg">
+                    <spa class="feature__text">Tempore reiciendis dicta at sequi quis consequuntur in eius.</spa>
+                    </li>
                 </ul>
-
-            </div>
         </section>
 
 
