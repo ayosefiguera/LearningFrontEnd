@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Document</title>
+</head>
+
+<body class="main">
+        <nav id="navbar"class="nav">
+            <header  class="nav__title">Table of content</header>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav-link nav__link" href="#JavaScript_object_basics">JavaScript object basics</a>
+                </li>
+                <li class="nav__item"><a class="nav-link nav__link" href="#Object_basics">Object basics</a></li>
+                <li class="nav__item"><a class="nav-link nav__link" href="#Dot_notation">Dot notation</a></li>
+                <li class="nav__item"><a class="nav-link nav__link" href="#Bracket_notation">Bracket notation</a></li>
+                <li class="nav__item"><a class="nav-link nav__link" href="#Setting_object_members">Setting object members</a>
+                </li>
+                <li class="nav__item"><a class="nav-link nav__link" href="#What_is_'this'?">What is 'this'?</a></li>
+                <li class="nav__item"><a class="nav-link nav__link" href="#You_have_been_using_objects_all_along">You have been using objects all along</a></li>
+                <li class="nav__item"><a class="nav-link nav__link" href="#Test_your_skills!">Test your skills!</a></li>
+                <li class="nav__item"><a class="nav-link nav__link" href="#Summary">Summary</a></li>
+
+            </ul>
+        </nav>
+
+        <main id="main-doc" class="main__doc">
+
+            <section  class="doc main-section" id="JavaScript_object_basics">
+                <header  id="header" class="doc__title doc_title--header">JavaScript object basics</header>
+                <article class="doc__content">
+                    <p>In this article, we'll look at fundamental JavaScript object syntax, and revisit some JavaScript
+                        features that we've already seen earlier in the course, reiterating the fact that many of the
+                        features you've already dealt with are objects.</p>
+                        <ul>
+                            <li>Example 1</li>
+                            <li>Example 2</li>
+                            <li>Example 3</li>
+                            <li>Example 4</li>
+                            <li>Example 5</li>
+                        </ul>
+                </article>
+            </section>
+
+
+
+            <section class="doc main-section" id="Object_basics">
+                <header  class="doc__title">Object basics</header>
+                <article class="doc__content">
+                    <p>An object is a collection of related data and/or functionality (which usually consists of several
+                        variables and functions — which are called properties and methods when they are inside objects.)
+                        Let's work through an example to understand what they look like.</p>
+                    <p>To begin with, make a local copy of our oojs.html file. This contains very little — a
+                        &#60;script&#62; element for us to write our source code into.We'll use this as a basis for
+                        exploring basic object syntax. While working with this example you should have your developer
+                        tools
+                        JavaScript console open and ready to type in some commands.</p>
+                    <p>As with many things in JavaScript, creating an object often begins with defining and initializing
+                        a
+                        variable. Try entering the following line below the JavaScript code that's already in your file,
+                        then saving and refreshing:</p>
+                    <pre class="doc__pre">
+                        <code>
+    const person = {};
+                        </code>
+                    </pre>
+                    <p>
+                        Now open your browser's JavaScript console, enter person into it, and press Enter/Return. You
+                        should
+                        get a result similar to one of the below lines:
+                    </p>
+                    <pre class="doc__pre">
+
+                    <code class="doc__code ">
+    [object Object]
+    Object { }
+    { }      
+                    </code>
+                </pre>
+
+                    <p>
+                        Congratulations, you've just created your first object. Job done! But this is an empty object,
+                        so we
+                        can't really do much with it. Let's update the JavaScript object in our file to look like this:
+                    </p>
+                    <pre class="doc__pre">
+                    <code>
+    const person = {
+        name: ['Bob', 'Smith'],
+        age: 32,
+        gender: 'male',
+        interests: ['music', 'skiing'],
+        bio: function() {
+            alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+        },
+        greeting: function() {
+            alert('Hi! I\'m ' + this.name[0] + '.');
+        }
+        };
+                    </code>
+                </pre>
+                    <p>
+                        After saving and refreshing, try entering some of the following into the JavaScript console on
+                        your
+                        browser devtools:
+                    </p>
+
+                    <pre class="doc__pre">
+                    <code>
+    person.name
+    person.name[0]
+    person.age
+    person.interests[1]
+    person.bio()
+    person.greeting()
+                    </code>
+                </pre>
+
+                    <p>You have now got some data and functionality inside your object, and are now able to access them
+                        with
+                        some nice simple syntax!</p>
+                    <div class="doc__note">
+                        <p>Note: If you are having trouble getting this to work, try comparing your code against our
+                            version
+                            — see oojs-finished.html (also see it running live). The live version will give you a blank
+                            screen, but that's OK — again, open your devtools and try typing in the above commands to
+                            see
+                            the object structure.</p>
+                    </div>
+
+                    <p>
+                        So what is going on here? Well, an object is made up of multiple members, each of which has a
+                        name
+                        (e.g. name and age above), and a value (e.g. ['Bob', 'Smith'] and 32). Each name/value pair must
+                        be
+                        separated by a comma, and the name and value in each case are separated by a colon. The syntax
+                        always follows this pattern:
+                    </p>
+                    <pre class="doc__pre">
+                    <code>
+    const objectName = {
+        member1Name: member1Value,
+        member2Name: member2Value,
+        member3Name: member3Value
+        };
+                    </code>
+                </pre>
+
+                    <p>
+                        The value of an object member can be pretty much anything — in our person object we've got a
+                        string,
+                        a number, two arrays, and two functions. The first four items are data items, and are referred
+                        to as
+                        the object's properties. The last two items are functions that allow the object to do something
+                        with
+                        that data, and are referred to as the object's methods.
+                    </p>
+                    <p>
+                        An object like this is referred to as an object literal — we've literally written out the object
+                        contents as we've come to create it. This is in contrast to objects instantiated from classes,
+                        which
+                        we'll look at later on.
+                    </p>
+                    <p>
+                        It is very common to create an object using an object literal when you want to transfer a series
+                        of
+                        structured, related data items in some manner, for example sending a request to the server to be
+                        put
+                        into a database. Sending a single object is much more efficient than sending several items
+                        individually, and it is easier to work with than an array, when you want to identify individual
+                        items by name.
+                    </p>
+
+                </article>
+            </section>
+
+            <section class="doc main-section" id="Dot_notation">
+                <header  class="doc__title">Dot notation</header>
+                <article class="doc__content">
+                    <p>
+                        Above, you accessed the object's properties and methods using dot notation. The object name
+                        (person)
+                        acts as the namespace — it must be entered first to access anything encapsulated inside the
+                        object.
+                        Next you write a dot, then the item you want to access — this can be the name of a simple
+                        property,
+                        an item of an array property, or a call to one of the object's methods, for example:
+                    </p>
+
+                    <pre class="doc__pre">
+                    <code>
+    person.age
+    person.interests[1]
+    person.bio()
+                    </code>
+                </pre>
+
+                    <h3 class="doc__subtitle">Sub-namespaces</h3>
+
+                    <p>It is even possible to make the value of an object member another object. For example, try
+                        changing
+                        the name member from</p>
+
+                    <pre class="doc__pre">
+                    <code>
+                        name: ['Bob', 'Smith'],
+                    </code>
+                </pre>
+                    <p>to</p>
+                    <pre class="doc__pre">
+                    <code>
+    name : {
+        first: 'Bob',
+        last: 'Smith'
+        },
+                    </code>
+                </pre>
+
+                    <p>Here we are effectively creating a sub-namespace. This sounds complex, but really it's not — to
+                        access these items you just need to chain the extra step onto the end with another dot. Try
+                        these in
+                        the JS console:</p>
+
+                    <pre class="doc__pre">
+                    <code>
+    person.name.first
+    person.name.last
+                    </code>
+                </pre>
+
+                    <p>Important: At this point you'll also need to go through your method code and change any instances
+                        of
+                    </p>
+
+                    <pre class="doc__pre">
+                    <code>
+    name[0]
+    name[1]
+                    </code>
+                </pre>
+
+                    <p>to</p>
+
+                    <pre class="doc__pre">
+                    <code>
+    name.first
+    name.last
+                    </code>
+                </pre>
+
+                    <p>Otherwise your methods will no longer work.</p>
+
+                </article>
+            </section>
+
+            <section class="doc main-section" id="Bracket_notation">
+                <header  class="doc__title">Bracket notation</header>
+                <article class="doc__content">
+                    <p>There is another way to access object properties — using bracket notation. Instead of using
+                        these:
+                    </p>
+
+                    <pre class="doc__pre">
+                    <code>
+    person.age
+    person.name.first
+                    </code>
+                </pre>
+                    <p>You can use</p>
+
+                    <pre class="doc__pre">
+                    <code>
+    person['age']
+    person['name']['first']
+                    </code>
+                </pre>
+                    <p>
+                        This looks very similar to how you access the items in an array, and it is basically the same
+                        thing
+                        — instead of using an index number to select an item, you are using the name associated with
+                        each
+                        member's value. It is no wonder that objects are sometimes called associative arrays — they map
+                        strings to values in the same way that arrays map numbers to values.
+                    </p>
+                </article>
+            </section>
+
+            <section class="doc main-section" id="Setting_object_members">
+                <header  class="doc__title">Setting object members</header>
+                <article class="doc__content">
+                    <p>So far we've only looked at retrieving (or getting) object members — you can also set (update)
+                        the
+                        value of object members by declaring the member you want to set (using dot or bracket notation),
+                        like this:</p>
+                    <pre class="doc__pre">
+                    <code>
+    person.age = 45;
+    person['name']['last'] = 'Cratchit';
+                    </code>
+                </pre>
+
+                    <p>Try entering the above lines, and then getting the members again to see how they've changed, like
+                        so:
+                    </p>
+
+                    <pre class="doc__pre">
+                    <code>
+    person.age
+    person['name']['last']
+                    </code>
+                </pre>
+                    <p>
+                        Setting members doesn't just stop at updating the values of existing properties and methods; you
+                        can
+                        also create completely new members. Try these in the JS console:
+                    </p>
+
+                    <pre class="doc__pre">
+                    <code>
+    person['eyes'] = 'hazel';
+    person.farewell = function() { alert("Bye everybody!"); }
+                    </code>
+                </pre>
+                    <p>
+                        You can now test out your new members:
+                    </p>
+                    <pre class="doc__pre">
+                    <code>
+    person['eyes']
+    person.farewell()
+                    </code>
+                </pre>
+                    <p>
+                        One useful aspect of bracket notation is that it can be used to set not only member values
+                        dynamically, but member names too. Let's say we wanted users to be able to store custom value
+                        types
+                        in their people data, by typing the member name and value into two text inputs. We could get
+                        those
+                        values like this:
+                    </p>
+                    <pre class="doc__pre">
+                    <code>
+    let myDataName = nameInput.value;
+    let myDataValue = nameValue.value;
+                    </code>
+                </pre>
+                    <p>We could then add this new member name and value to the person object like this:</p>
+                    <pre class="doc__pre">
+                    <code>
+    person[myDataName] = myDataValue;
+                    </code>
+                </pre>
+                    <p>To test this, try adding the following lines into your code, just below the closing curly brace
+                        of
+                        the person object:</p>
+                    <pre class="doc__pre">
+                    <code>
+    let myDataName = 'height';
+    let myDataValue = '1.75m';
+    person[myDataName] = myDataValue;
+                    </code>
+                </pre>
+                    <p>
+                        Now try saving and refreshing, and entering the following into your text input:
+                    </p>
+                    <pre class="doc__pre">
+                    <code>
+    person.height
+                    </code>
+                </pre>
+                    <p>
+                        Adding a property to an object using the method above isn't possible with dot notation, which
+                        can
+                        only accept a literal member name, not a variable value pointing to a name.
+                    </p>
+                </article>
+            </section>
+
+            <section class="doc main-section" id="What_is_'this'?">
+                <header class="doc__title">What is 'this'?</header>
+                <article class="doc__content">
+                    <p>You may have noticed something slightly strange in our methods. Look at this one for example:</p>
+                    <pre class="doc__pre">
+                    <code>
+    greeting: function() {
+        alert('Hi! I\'m ' + this.name.first + '.');
+        }
+                    </code>
+                </pre>
+                    <p>
+                        You are probably wondering what "this" is. The this keyword refers to the current object the
+                        code is
+                        being written inside — so in this case this is equivalent to person. So why not just write
+                        person
+                        instead? As you'll see in the Object-oriented JavaScript for beginners article, when we start
+                        creating constructors and so on, this is very useful — it always ensures that the correct values
+                        are
+                        used when a member's context changes (for example, two different person object instances may
+                        have
+                        different names, but we want to use their own name when saying their greeting).
+                    </p>
+                    <p>
+                        Let's illustrate what we mean with a simplified pair of person objects:
+                    </p>
+                    <pre class="doc__pre">
+                    <code>
+    const person1 = {
+        name: 'Chris',
+        greeting: function() {
+            alert('Hi! I\'m ' + this.name + '.');
+        }
+        }
+        
+        const person2 = {
+        name: 'Deepti',
+        greeting: function() {
+            alert('Hi! I\'m ' + this.name + '.');
+        }
+        }
+                    </code>
+                </pre>
+                    <p>
+                        In this case, person1.greeting() outputs "Hi! I'm Chris."; person2.greeting() on the other hand
+                        outputs "Hi! I'm Deepti.", even though the method's code is exactly the same in each case. As we
+                        said earlier, this is equal to the object the code is inside — this isn't hugely useful when you
+                        are
+                        writing out object literals by hand, but it really comes into its own when you are dynamically
+                        generating objects (for example using constructors). It will all become clearer later on.
+                    </p>
+                </article>
+            </section>
+
+            <section class="doc main-section" id="You_have_been_using_objects_all_along">
+                <header  class="doc__title">You have been using objects all along</header>
+                <article class="doc__content">
+                    <p>
+                        As you've been going through these examples, you have probably been thinking that the dot
+                        notation
+                        you've been using is very familiar. That's because you've been using it throughout the course!
+                        Every
+                        time we've been working through an example that uses a built-in browser API or JavaScript
+                        object,
+                        we've been using objects, because such features are built using exactly the same kind of object
+                        structures that we've been looking at here, albeit more complex ones than in our own basic
+                        custom
+                        examples.
+                    </p>
+                    <p>
+                        So when you used string methods like:
+                    </p>
+                    <pre class="doc__pre">
+                    <code>
+    myString.split(',');
+                    </code>
+                </pre>
+                    <p>
+                        You were using a method available on an instance of the String class. Every time you create a
+                        string
+                        in your code, that string is automatically created as an instance of String, and therefore has
+                        several common methods and properties available on it.
+                    </p>
+                    <p>
+                        When you accessed the document object model using lines like this:
+                    </p>
+                    <pre class="doc__pre">
+                    <code>
+    const myDiv = document.createElement('div');
+    const myVideo = document.querySelector('video');
+                    </code>
+                </pre>
+                    <p>
+                        You were using methods available on an instance of the Document class. For each webpage loaded,
+                        an
+                        instance of Document is created, called document, which represents the entire page's structure,
+                        content, and other features such as its URL. Again, this means that it has several common
+                        methods
+                        and properties available on it.
+                    </p>
+                    <p>
+                        The same is true of pretty much any other built-in object or API you've been using — Array,
+                        Math,
+                        and so on.
+                    </p>
+                    <p>
+                        Note that built in objects and APIs don't always create object instances automatically. As an
+                        example, the Notifications API — which allows modern browsers to fire system notifications —
+                        requires you to instantiate a new object instance using the constructor for each notification
+                        you
+                        want to fire. Try entering the following into your JavaScript console:
+                    </p>
+                    <pre class="doc__pre">
+                    <code>
+    const myNotification = new Notification('Hello!');
+                    </code>
+                </pre>
+                    <p>
+                        Again, we'll look at constructors in a later article.
+                    </p>
+                    <div class="doc__note">
+                        Note: It is useful to think about the way objects communicate as message passing — when an
+                        object
+                        needs another object to perform some kind of action often it sends a message to another object
+                        via
+                        one of its methods, and waits for a response, which we know as a return value.
+                    </div>
+                </article>
+            </section>
+
+            <section class="doc main-section" id="Test_your_skills!">
+                <header  class="doc__title">Test your skills!</header>
+                <article class="doc__content">
+                    <p>You've reached the end of this article, but can you remember the most important information? You
+                        can
+                        find some further tests to verify that you've retained this information before you move on — see
+                        Test your skills: Object basics.</p>
+
+                </article>
+            </section>
+            <section class="doc main-section" id="Summary">
+                <header  class=" doc__title">Summary</header>
+                <article class="doc__content">
+                    <p>Congratulations, you've reached the end of our first JS objects article — you should now have a
+                        good
+                        idea of how to work with objects in JavaScript — including creating your own simple objects. You
+                        should also appreciate that objects are very useful as structures for storing related data and
+                        functionality — if you tried to keep track of all the properties and methods in our person
+                        object as
+                        separate variables and functions, it would be inefficient and frustrating, and we'd run the risk
+                        of
+                        clashing with other variables and functions that have the same names. Objects let us keep the
+                        information safely locked away in their own package, out of harm's way.</p>
+                    <p>
+                        In the next article we'll start to look at object-oriented programming (OOP) theory, and how
+                        such
+                        techniques can be used in JavaScript.
+                    </p>
+                </article>
+            </section>
+
+        </main>
+    <footer class="footer">
+        <p>All the documentation in this page is taken from <a
+                href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics#test_your_skills!" target="_blank" >MDN</a>
+        </p>
+    </footer>
+</body>
+
+</html>
